@@ -16,18 +16,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             // Creates `style` nodes from JS strings
             options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
-            {
-                loader: "css-loader",
-                options: {
-                    modules: true,
-                },
-                
-            },
+            "css-loader",
             "postcss-loader",
+            //Нужен для tailwind
             // Compiles Sass to CSS
             "sass-loader",
         ],
-        
+
     }
 
     return [
